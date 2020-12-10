@@ -1,0 +1,2 @@
+pydicom~=2.1.2
+pynetdicom~=1.5.3
