@@ -36,7 +36,7 @@ def store_image(file):
 	class_uid = ds['SOPClassUID'].value
 	ae.add_requested_context(class_uid)
 	# 5.Associate with peer AE at IP 127.0.0.1 and port 11112
-	assoc = ae.associate(IP, PORT, ae_title=AETitle)
+	assoc = ae.associate(addr, port, ae_title=AETitle)
 	# 6.发送影像
 	if assoc.is_established:
 		# Use the C-STORE service to send the dataset #returns the response status as a pydicom Dataset

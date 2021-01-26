@@ -20,7 +20,7 @@ from pynetdicom.sop_class import (
 )
 
 import os
-from config import LocalAE, AETitle, IP, PORT, SavePath
+from config import LocalAE, AETitle, addr, port, SavePath
 
 
 # 创建文件夹
@@ -90,7 +90,7 @@ ds.SeriesInstanceUID = '2.25.200415808230095236475307643644746736546'
 # ds.SeriesInstanceUID = '1.3.12.2.1107.5.1.4.65270.30000020032317201059800119336'
 
 # 建立节点连接
-assoc = ae.associate(IP, PORT, ae_title=AETitle, ext_neg=[role], evt_handlers=handlers)
+assoc = ae.associate(addr, port, ae_title=AETitle, ext_neg=[role], evt_handlers=handlers)
 if assoc.is_established:
 	responses = assoc.send_c_get(ds, QR["StudyRootQueryRetrieveInformationModelGet"])
 	for (status, identifier) in responses:

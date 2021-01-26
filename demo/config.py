@@ -11,9 +11,16 @@
 LocalAE = 'zyp_echo_scu'
 
 """节点scp配置"""
-AETitle = 'DYSERVICE'
-IP = '192.168.1.18'
-PORT = 8191
+# AETitle = 'DYSERVICE'
+# IP = '192.168.1.18'
+# PORT = 8191
+
+
+"""节点cy scp配置"""
+AETitle = 'qwy'
+addr = '192.168.1.60'
+port = 8488
+
 
 # AETitle = 'IMCIS_QR11'
 # IP = '192.168.1.55'

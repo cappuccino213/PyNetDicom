@@ -9,11 +9,11 @@
 
 """将DICOM C-ECHO发送到对等验证SCP（在TCP / IP地址addr处 ，侦听端口号port ）"""
 from pynetdicom import AE
-from config import LocalAE, AETitle, IP, PORT
+from config import LocalAE, AETitle, addr, port
 
 ae = AE(ae_title=LocalAE)
 ae.add_requested_context('1.2.840.10008.1.1')
-assoc = ae.associate(IP, PORT, ae_title=AETitle)
+assoc = ae.associate(addr, port, ae_title=AETitle)
 if assoc.is_established:
 	status = assoc.send_c_echo()
 	if status:
